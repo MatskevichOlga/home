@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0
+		}
+
+		.chesstable {
+			width: 80Vmin;
+			height: 80Vmin;
+			margin: 10Vmin;
+			outline: 1px solid red;
+		}
+
+		.chesstable>div {
+			outline: 1px solid blue;
+			height: 10Vmin;
+		}
+
+		.chesstable>div>div {
+			outline: 1px solid green;
+			height: 10Vmin;
+			width: 10Vmin;
+			float: left;
+		}
+
+		.chesstable>div:first-child>div:first-child::before,
+		.chesstable>div:nth-child(8)>div:nth-child(1)::before {
+			content: "a";
+			display: block;
+			background-color: yellow;
+			width: 10Vmin;
+			height: 10Vmin;
+			line-height: 10Vmin;
+			text-align: center;
+			font-size: 5Vmin;
+		}
+
+		.chesstable>div:nth-child(-7n+8)>div::before {
+			content: "";
+            display: block;
+			background-color: yellow;
+			width: 10Vmin;
+			height: 10Vmin;
+			line-height: 10Vmin;
+			text-align: center;
+			font-size: 5Vmin;
+		}
+        .chesstable>div:nth-child(1)>div:nth-child(2)::before,
+		.chesstable>div:nth-child(8)>div:nth-child(2)::before {
+			content: "b";		
+		}
+        .chesstable>div:nth-child(1)>div:nth-child(3)::before,
+		.chesstable>div:nth-child(8)>div:nth-child(3)::before {
+			content: "c";
+        }
+        .chesstable>div:nth-child(1)>div:nth-child(4)::before,
+		.chesstable>div:nth-child(8)>div:nth-child(4)::before {
+			content: "d";
+        }
+        .chesstable>div:nth-child(1)>div:nth-child(5)::before,
+		.chesstable>div:nth-child(8)>div:nth-child(5)::before {
+			content: "e";
+        }
+        .chesstable>div:nth-child(1)>div:nth-child(6)::before,
+		.chesstable>div:nth-child(8)>div:nth-child(6)::before {
+			content: "f";
+        }
+        .chesstable>div:nth-child(1)>div:nth-child(7)::before,
+		.chesstable>div:nth-child(8)>div:nth-child(7)::before {
+			content: "g";
+        }
+        .chesstable>div:nth-child(1)>div:nth-child(8)::before,
+		.chesstable>div:nth-child(8)>div:nth-child(8)::before {
+			content: "h";
+        }
+		.chesstable>div:first-child>div::before {
+			margin-top: -100%;
+		}
+        .chesstable>div:last-child>div::before {
+			margin-top: 100%;
+		}
+            
+        .chesstable>div::before,
+        .chesstable>div::after {
+            width: 10Vmin;
+            height:10Vmin;
+            display: block;
+            background-color: red;
+        }
+        .chesstable>div::before {
+            margin-left: 10Vmin;
+            margin-left: 10Vmin;
+        }  
+        .chesstable>div:nth-child(odd)>div:nth-child(odd),
+        .chesstable>div:nth-child(even)>div:nth-child(even)
+        { background-color: blue; }
+
+        .chesstable>div:nth-child(1)>div,
+        .chesstable>div:nth-child(2)>div,
+        .chesstable>div:nth-child(7)>div,
+        .chesstable>div:nth-child(8)>div {
+            display: block;
+			background-image: url("images/chess.png");
+            background-size: 600% 200%;
+            background-repeat: no-repeat;
+	    }
+        .chesstable>div:nth-child(7)>div,
+        .chesstable>div:nth-child(8)>div {
+            background-position-y: 100%;
+        }
+        .chesstable>div:nth-child(2)>div,
+        .chesstable>div:nth-child(7)>div {
+            background-position-x: 104%;
+        }
+        .chesstable>div:first-child>div:first-child,
+        .chesstable>div:first-child>div:last-child,
+        .chesstable>div:last-child>div:first-child,
+        .chesstable>div:last-child>div:last-child {
+            background-position-x: 41%;
+        }
+        .chesstable>div:first-child>div:nth-child(2),
+        .chesstable>div:first-child>div:nth-child(7),
+        .chesstable>div:last-child>div:nth-child(2),
+        .chesstable>div:last-child>div:nth-child(7) {
+            background-position-x: 83%;
+        }
+        .chesstable>div:first-child>div:nth-child(3),
+        .chesstable>div:first-child>div:nth-child(6),
+        .chesstable>div:last-child>div:nth-child(3),
+        .chesstable>div:last-child>div:nth-child(6) {
+            background-position-x: 62%;
+        }
+        .chesstable>div:first-child>div:nth-child(4),
+        .chesstable>div:last-child>div:nth-child(4) {
+            background-position-x: 19%;
+        }
+        .chesstable>div:first-child>div:nth-child(5),
+        .chesstable>div:last-child>div:nth-child(5) {
+            background-position-x: -2%;
+        }
+        .chesstable>div:nth-child(-n+8)>div:hover {
+            background: green;
+        }
+7	</style>
+</head>
+
+
+        
+
+
+<body>
+	<div class="chesstable">
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+</body>
+
+</html>
