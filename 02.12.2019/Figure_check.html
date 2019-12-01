@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+body {
+     margin: 10vmin;
+    }
+.chessB {
+    height: 10vmin;
+    width: 10vmin;
+    outline: solid blue 1px;
+    background-image: url("images/chess.png");
+    background-size: 600% 200%;
+    background-position-x: 62%;
+ 
+}
+.chessW {
+    position: relative;
+    bottom: 10vmin;
+    height: 10vmin;
+    width: 10vmin;
+    outline: solid blue 1px;
+    background-image: url("images/chess.png");
+    background-size: 600% 200%;
+    background-position-x: 62.3%;
+    background-position-y: 100%;
+}
+#chess1+div>label>span {
+    display: none;
+}
+#chess1+div>label>span#unchecked {
+    display: initial;
+}
+#chess1:checked+div>label>span#unchecked {
+    display: none;
+}
+#chess1:checked+div>label>span#checked {
+    display: initial;
+}
+</style>
+<body>
+<input type="checkbox" id="chess1">
+<div>
+<label for="chess1"><div class="chessB"></div><span id="unchecked">
+<span id="checked"><div class="chessW"></div></span></label>
+</div>   
+</body>
+</html>
