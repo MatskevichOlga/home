@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ООО "Рога и копыта" - заготовка кожи и всего остального</title>
+    <style> 
+    body, ul {
+        margin: 0;
+    }
+    header {
+        position: relative;
+        height: 10vw;
+        background-color: salmon;
+        width: 100vw;
+    }
+    header>div {
+        position: absolute;
+        background: gold;
+        width: 10vw;
+        height: 3vw;
+        text-align: center;
+        line-height: 3vw;
+        top: 1vw;
+        left: 1vw;
+        border-radius: 4px;
+    }
+    ul {
+        list-style: none;
+    }
+    header>ul>li {
+        position: absolute;
+        display: inline-block;
+        cursor: pointer;
+        top: 8vw;
+    }
+    
+    header>ul>li:nth-child(3) {
+        left: 85vw;
+    }
+
+    header>ul>li:nth-child(2) {
+        left: 75vw;
+    }
+
+    header>ul>li:nth-child(1) {
+        left: 64vw;
+    }
+    
+    header>ul>li+li+li>ul {
+        display: none;
+    }
+    header>ul>li:nth-child(3):hover>ul {
+       display: block;
+       background-color: lightgrey;
+       border-radius: 5px;
+    
+    }
+    header>ul>li:nth-child(3):hover>ul>li:hover {
+        text-decoration: underline;
+    }
+    aside {
+        position: absolute;
+        display: block;
+        width: 14vw;
+        background-repeat: repeat-y;
+        background-color: fuchsia;
+        float: left;
+        height: 70vh;
+    }
+    aside>ul>li {
+        display: none;
+        cursor: pointer;
+    }
+    aside {
+        cursor: pointer;
+    }
+    footer {
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 12vw;
+        background-color: aqua;
+        bottom: 0;
+        text-align: center;
+        line-height: 10vw;
+    }
+    input[type=checkbox] {
+        display: none;
+    }
+    #roga:checked~aside>ul>li:nth-child(1) {
+        display: block;
+    }
+    #roga:checked~aside>ul>li>label[for=roga] {
+        background: blue;
+    }
+    #kopita:checked~aside>ul>li:nth-child(2) {
+        display: block;
+    }
+    #kopita:checked~aside>ul>li>label[for=kopita] {
+        background: blue;
+    }
+    #koja:checked~aside>ul>li:nth-child(3) {
+        display: block;
+    }
+    #koja:checked~aside>ul>li>label[for=koja] {
+        background: blue;
+    }
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>Logo</div>
+        
+        <ul>
+            <li>О компании</li>
+            <li>Доставка</li>
+            <li>Вакансии
+                <ul>
+                    <li>Заготовщик кожи</li>
+                    <li>Заготовщик рогов</li>
+                    <li>Заготовщик копыт</li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <aside>
+        <div>Каталог</div>
+        <ul><input type="checkbox" id="roga" name="a1">
+        <label for="roga">
+           <li> Рога</label>
+                <ul>
+                    <li>Бараньи</li>
+                    <li>Оленьи</li>
+                </ul>
+            </li>
+            <input type="checkbox" id="kopita" name="a2">
+            <label for="kopita">
+            <li>Копыта</label>
+                <ul>
+                    <li>Бараньи</li>
+                    <li>Оленьи</li>
+                    <li>Свиные</li>
+                </ul>
+            </li><input type="checkbox" id="koja" name="a3">
+            <label for="koja">
+            <li>Кожа</label>
+                <ul>
+                    <li>Крокодила</li>
+                    <li>Чебурашки</li>
+                    <li>Старухи шапокляк</li>
+                </ul></li>
+        </ul>
+    </aside>
+    <main></main>
+    <footer>&copy; 2019</footer>
+</body>
+</html>

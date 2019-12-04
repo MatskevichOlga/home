@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Фотогалерея</title>
+    <style>
+    .slide {
+        display:none; position: absolute;
+    }
+    .slide>img {
+        position: absolute;
+        display: block;
+        width: 40vw;
+        height: 30vw;
+        left: 34vw;
+        cursor: pointer;
+    }
+    .slide>img:hover {
+        transition: 3s linear;
+        transform: rotate(360deg)
+    }
+
+    #three:checked~#slider>.slide:nth-child(3), #one:checked~#slider>.slide:nth-child(1), 
+    #two:checked~#slider>.slide:nth-child(2), #four:checked~#slider>.slide:nth-child(4), 
+    #five:checked~#slider>.slide:nth-child(5) {
+        display: block;
+    }
+    #three:checked~#slider>.pins>label[for=three], #one:checked~#slider>.pins>label[for=one],
+    #two:checked~#slider>.pins>label[for=two], #four:checked~#slider>.pins>label[for=four],
+    #five:checked~#slider>.pins>label[for=five] {
+        background-color: red;
+        display: block;
+    }
+    #three:checked~#slider>.slide:nth-child(3), #one:checked~#slider>.slide:nth-child(1), 
+    #two:checked~#slider>.slide:nth-child(2), #four:checked~#slider>.slide:nth-child(4), 
+    #five:checked~#slider>.slide:nth-child(5) {
+        transition: 3s;
+    }
+    .prevSlide::before {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+        border-top: 5VW solid transparent;
+        border-right: 10VW solid lightblue;
+        border-bottom: 5VW solid transparent;
+        left: 23vw;
+        top: 10vw;
+        cursor: pointer;
+
+    }
+    .prevSlide:hover::before {
+        border-top: 5VW solid transparent;
+        border-right: 10VW solid fuchsia;
+        border-bottom: 5VW solid transparent;
+        transition: 2s;
+     }
+    .nextSlide::before {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+        border-top: 5VW solid transparent;
+        border-left: 10VW solid lightblue;
+        border-bottom: 5VW solid transparent;
+        left: 75vw;
+        top: 10vw;
+        cursor: pointer;
+    }
+    .nextSlide:hover::before {
+        border-top: 5VW solid transparent;
+        border-left: 10VW solid fuchsia;
+        border-bottom: 5VW solid transparent;
+        transition: 2s;
+    }
+    input[type=radio] {
+        position: relative;
+        float: left;
+        left: 50vw;
+        display: block;
+        background-color: red;
+        top: 32vw;
+    }
+   
+    </style>
+</head>
+
+<body>
+    <h1>добавить стили и расставить for и src так, чтобы работала фотогаллерея</h1>
+	<input type="radio" id="one" name="a">
+	<input type="radio" id="two" name="a">
+	<input type="radio" id="three" name="a"> 
+	<input type="radio" id="four" name="a">
+	<input type="radio" id="five" name="a">
+	<div id="slider">
+		<section class="slide">
+			<img src="https://moika78.ru/news2/2019/08/Snimok-170-1024x594.jpg">
+			<label for="five" class="prevSlide"></label>
+			<label for="two" class="nextSlide"></label>
+		</section>
+		<section class="slide">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPMk5ueJSaS0nCxcnj1c1B_fDdPEdsTggbEIjgSZywWf6az2Gp">
+			<label for="one" class="prevSlide"></label>
+			<label for="three" class="nextSlide"></label>
+		</section>
+		<section class="slide">
+			<img src="http://usatiki.ru/wp-content/uploads/2018/04/skolko-kotyat-rozhaet-koshka-v-pervyj-raz.jpg">
+			<label for="two" class="prevSlide"></label>
+			<label for="four" class="nextSlide"></label>
+		</section>
+		<section class="slide">
+			<img src="https://s10.stc.all.kpcdn.net/share/i/12/10912221/inx960x640.jpg">
+			<label for="three" class="prevSlide"></label>
+			<label for="five" class="nextSlide"></label>
+		</section>
+		<section class="slide">
+			<img src="https://static3.depositphotos.com/1005412/218/i/450/depositphotos_2186038-stock-photo-kitten-lays-isolated.jpg">
+			<label for="four" class="prevSlide"></label>
+			<label for="one" class="nextSlide"></label>
+		</section>
+		<div class="pins">
+			<label for="one"></label>
+			<label for="two"></label>
+			<label for="three"></label>
+			<label for="four"></label>
+			<label for="five"></label>
+		</div>
+	</div>
+</body>
+
+</html>
