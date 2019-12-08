@@ -103,18 +103,19 @@ main {
     display: block;
     position: absolute;
     top: 440px;
-    bottom: 150px;
-    height: 164.4px;
+    bottom: 130px;
+    right: 0;
+    left: 0;
    
 }
 footer {
     display: block;
     position: absolute;
-    height: 150px;
     background-color: aqua;
     bottom: 0;
+    top: 624px;
     text-align: center;
-    line-height: 150px;
+    line-height: 120px;
     right: 0;
     left: 0;
 }
