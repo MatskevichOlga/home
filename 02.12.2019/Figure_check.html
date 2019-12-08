@@ -15,6 +15,7 @@ body {
     width: 10vmin;
     outline: solid blue 1px;
     background-image: url("images/chess.png");
+    background-color: red;
     background-size: 600% 200%;
     background-position-x: 62%;
  
@@ -26,27 +27,31 @@ body {
     width: 10vmin;
     outline: solid blue 1px;
     background-image: url("images/chess.png");
+    background-color: red;
     background-size: 600% 200%;
     background-position-x: 62.3%;
     background-position-y: 100%;
+}
+#chess {
+    display: none;
 }
 #chess1+div>label>span {
     display: none;
 }
 #chess1+div>label>span#unchecked {
-    display: initial;
+    display: block;
 }
 #chess1:checked+div>label>span#unchecked {
     display: none;
 }
 #chess1:checked+div>label>span#checked {
-    display: initial;
+    display: block;
 }
 </style>
 <body>
 <input type="checkbox" id="chess1">
 <div>
-<label for="chess1"><div class="chessB"></div><span id="unchecked">
+<label for="chess1"><div class="chessB"></div><span id="unchecked"></span>
 <span id="checked"><div class="chessW"></div></span></label>
 </div>   
 </body>

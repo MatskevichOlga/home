@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title><style>
+    .slide {
+			outline: 1px solid red;
+  opacity: 0;
+		}
+		input[name=photos] {
+			display: none;
+		}
+		.slide {
+			display: none;
+		}
+
+		#one:checked~#slider>.slide:nth-child(1),
+		#two:checked~#slider>.slide:nth-child(2),
+		#three:checked~#slider>.slide:nth-child(3),
+		#four:checked~#slider>.slide:nth-child(4),
+		#five:checked~#slider>.slide:nth-child(5) {
+opacity:1;
+}
+		.slide {
+			position: relative;
+		}
+		.prevSlide, .nextSlide {
+			position: absolute;
+			top: calc(50% - 1em);
+		}
+		.prevSlide::before {
+			display: block;
+			content: "<";
+		}
+		.nextSlide::before {
+			display: block;
+			content: ">"
+		}
+		.prevSlide {
+			left: 0;
+		}
+		.nextSlide {
+			right: 0;
+		}
+		.slide {
+			text-align: center;
+			min-width: 170px;
+		}
+		.pins>label {
+			border-radius: 50%;
+			background-color: aqua;
+			display: block;
+			width: 10px;
+			height: 10px;
+			float: left;
+			margin: 10px;
+		}
+		.pins {
+			margin-left: calc(50% - 75px);
+		}
+		#one:checked~#slider>.pins>label:nth-child(1),
+		#two:checked~#slider>.pins>label:nth-child(2),
+		#three:checked~#slider>.pins>label:nth-child(3),
+		#four:checked~#slider>.pins>label:nth-child(4),
+		#five:checked~#slider>.pins>label:nth-child(5) {
+			background-color: blue;
+		}
+				.slide {
+			transition: 1s;
+			display: block;
+			position: absolute;
+			opacity: 0;
+			z-index: 0;
+			left: 0;
+			right: 0;
+		}
+
+		#one:checked~#slider>.slide:nth-child(1),
+		#two:checked~#slider>.slide:nth-child(2),
+		#three:checked~#slider>.slide:nth-child(3),
+		#four:checked~#slider>.slide:nth-child(4),
+		#five:checked~#slider>.slide:nth-child(5) {
+			z-index: 1;
+			opacity: 1;
+		}
+		.pins {
+			position: absolute;
+			top: 160px;
+		}
+		#slider {
+			position: relative;
+		}
+        </style>
+</head>
+<body>
+ <h1>добавить стили и расставить for и src так, чтобы работала фотогаллерея</h1>
+	<input type="radio" name="photos" id="one" checked>
+	<input type="radio" name="photos" id="two">
+	<input type="radio" name="photos" id="three">
+	<input type="radio" name="photos" id="four">
+	<input type="radio" name="photos" id="five">
+	<div id="slider">
+		<section class="slide">
+			<img src="https://i.ebayimg.com/00/s/MTAwMFgxMDAw/z/-6YAAOSwh21aUfij/$_7.JPG">
+			<label for="five" class="prevSlide"></label>
+			<label for="two" class="nextSlide"></label>
+		</section>
+		<section class="slide">
+			<img src="https://starwarsblog.starwars.com/wp-content/uploads/2014/07/anovos_darth_vader_4-150x150.jpg">
+			<label for="one" class="prevSlide"></label>
+			<label for="three" class="nextSlide"></label>
+		</section>
+		<section class="slide">
+			<img src="https://content.ebgames.co.nz/website/images/packshots/222762_packshot_L.jpg">
+			<label for="two" class="prevSlide"></label>
+			<label for="four" class="nextSlide"></label>
+		</section>
+		<section class="slide">
+			<img src="https://gamebrott.com/wp-content/uploads/2017/09/seasonpassswbf-150x150.jpg">
+			<label for="three" class="prevSlide"></label>
+			<label for="five" class="nextSlide"></label>
+		</section>
+		<section class="slide">
+			<img src="https://hrcdn.net/s3_pub/hr-avatars/98a1ef3b-5954-4628-9b1d-9d0e3a4c8f56/150x150.png">
+			<label for="four" class="prevSlide"></label>
+			<label for="one" class="nextSlide"></label>
+		</section>
+		<div class="pins">
+			<label for="one"></label>
+			<label for="two"></label>
+			<label for="three"></label>
+			<label for="four"></label>
+			<label for="five"></label>
+		</div>
+	</div>
+    
+</body>
+</html>

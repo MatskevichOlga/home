@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+body {
+     margin: 10vmin;
+    }
+.chess>* {
+    position: absolute;
+    height: 10vmin;
+    width: 10vmin;
+    outline: solid blue 1px;
+    background-image: url("images/chess.png");
+    background-size: 600% 200%;
+}
+.queenB {
+    background-position-x: 0%;
+}
+.kingB {
+    background-position-x: 19%;
+}
+.chess>* {
+    position: absolute;
+}
+#chess1+.chess>label>.queenB>span {
+    display: none;
+}
+#chess1+.chess>label>.kingB>span#unchecked {
+    display: block;
+}
+#chess1:checked+.chess>.queenB>label>span#unchecked {
+    display: none;
+}
+#chess1:checked+.chess>label>.kingB>span#checked {
+    display: block;
+}
+</style>
+<body>
+<input type="checkbox" id="chess1">
+<div class="chess">
+<label for="chess1"><div class="queenB"></div><span id="unchecked">
+<span id="checked"><div class="kingB"></div></span></label>
+</div>   
+</body>
+</html>

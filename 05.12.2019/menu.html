@@ -10,15 +10,17 @@
         margin: 0;
     }
     header {
-        position: relative;
-        height: 10vw;
+        position: absolute;
+        min-height: 12vw;
         background-color: salmon;
-        width: 100vw;
+        min-width: 100vw;
+        float: left;
+    
     }
     header>div {
-        position: absolute;
+        position: relative;
         background: gold;
-        width: 10vw;
+        width: 18vw;
         height: 3vw;
         text-align: center;
         line-height: 3vw;
@@ -37,50 +39,57 @@
     }
     
     header>ul>li:nth-child(3) {
-        left: 85vw;
+        right: 5vw;
+        float: left;
     }
 
     header>ul>li:nth-child(2) {
-        left: 75vw;
+        right: 15vw;
     }
 
     header>ul>li:nth-child(1) {
-        left: 64vw;
+        right: 25vw;
     }
     
     header>ul>li+li+li>ul {
         display: none;
     }
+    header>ul>li:nth-child(3)::after {
+        content: "\25be";
+        position: absolute;
+        font-size: 30px;
+        top: -5px;
+    }
+
     header>ul>li:nth-child(3):hover>ul {
        display: block;
-       background-color: lightgrey;
-       border-radius: 5px;
-    
+       position: absolute;
+       left: -4vw;
     }
+    
     header>ul>li:nth-child(3):hover>ul>li:hover {
         text-decoration: underline;
     }
     aside {
+        top: 12vw;
         position: absolute;
         display: block;
-        width: 14vw;
-        background-repeat: repeat-y;
+        min-width: 20vw;
         background-color: fuchsia;
+        background-repeat: repeat-y;
         float: left;
-        height: 70vh;
+        bottom: 12vw;
+
     }
-    aside>ul>li {
-        display: none;
+    aside>div, aside>div~ul>li {
         cursor: pointer;
     }
-    aside {
-        cursor: pointer;
-    }
+
     footer {
         display: block;
         position: absolute;
-        width: 100vw;
-        height: 12vw;
+        min-width: 100vw;
+        min-height: 12vw;
         background-color: aqua;
         bottom: 0;
         text-align: center;
@@ -89,23 +98,46 @@
     input[type=checkbox] {
         display: none;
     }
-    #roga:checked~aside>ul>li:nth-child(1) {
+    label {
+        cursor: pointer;
+        display: inline-block;
+    }
+    aside>div~ul {
+        display: block;
+        position: relative;
+    }
+    label::after {
+        display: inline-block;
+        content: "\25b6";
+        position: absolute;
+        right: 0;
+
+    }
+    aside>div~ul>li>ul {
+        display: none;
+        z-index: 1;
+    }
+    #roga:checked~ul {
         display: block;
     }
-    #roga:checked~aside>ul>li>label[for=roga] {
-        background: blue;
-    }
-    #kopita:checked~aside>ul>li:nth-child(2) {
+    #roga:checked~label[for=roga] {
         display: block;
     }
-    #kopita:checked~aside>ul>li>label[for=kopita] {
-        background: blue;
-    }
-    #koja:checked~aside>ul>li:nth-child(3) {
+    #kopita:checked~ul {
         display: block;
     }
-    #koja:checked~aside>ul>li>label[for=koja] {
-        background: blue;
+    #kopita:checked~label[for=kopita] {
+        display: block;
+    }
+    #koja:checked~ul {
+        display: block;
+    }
+    #koja:checked~label[for=koja] {
+        display: block;
+    }
+    #koja:checked~ul>li:hover, #kopita:checked~ul>li:hover,
+    #roga:checked~ul>li:hover {
+        text-decoration: underline;
     }
 
 
@@ -131,30 +163,30 @@
     </header>
     <aside>
         <div>Каталог</div>
-        <ul><input type="checkbox" id="roga" name="a1">
-        <label for="roga">
-           <li> Рога</label>
+        <ul>
+           <li><input type="checkbox" id="roga" name="a1">
+        <label for="roga">Рога </label>
                 <ul>
                     <li>Бараньи</li>
                     <li>Оленьи</li>
                 </ul>
             </li>
-            <input type="checkbox" id="kopita" name="a2">
-            <label for="kopita">
-            <li>Копыта</label>
+            <li><input type="checkbox" id="kopita" name="a2">
+            <label for="kopita">Копыта </label>
                 <ul>
                     <li>Бараньи</li>
                     <li>Оленьи</li>
                     <li>Свиные</li>
                 </ul>
-            </li><input type="checkbox" id="koja" name="a3">
-            <label for="koja">
-            <li>Кожа</label>
+            </li>
+            <li><input type="checkbox" id="koja" name="a3">
+            <label for="koja">Кожа </label>
                 <ul>
                     <li>Крокодила</li>
                     <li>Чебурашки</li>
                     <li>Старухи шапокляк</li>
-                </ul></li>
+                </ul>
+            </li>
         </ul>
     </aside>
     <main></main>

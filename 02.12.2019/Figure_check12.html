@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+body {
+     margin: 10vmin;
+    }
+.queenB {
+    position: absolute;
+    height: 10vmin;
+    width: 10vmin;
+    outline: solid blue 1px;
+    background-image: url("images/chess.png");
+    background-size: 600% 200%;
+    background-position-x: 0%;
+ 
+}
+.kingB {
+    position: absolute;
+    height: 10vmin;
+    width: 10vmin;
+    outline: solid blue 1px;
+    background-image: url("images/chess.png");
+    background-size: 600% 200%;
+    background-position-x: 19%;
+}
+.elefantB {
+    position: absolute;
+    height: 10vmin;
+    width: 10vmin;
+    outline: solid blue 1px;
+    background-image: url("images/chess.png");
+    background-size: 600% 200%;
+    background-position-x: 62%;
+}
+.horseB {
+    position: absolute;
+    height: 10vmin;
+    width: 10vmin;
+    outline: solid blue 1px;
+    background-image: url("images/chess.png");
+    background-size: 600% 200%;
+    background-position-x: 83%;
+}
+#chess1+div>label>span {
+    display: none;
+
+}
+#chess1+div>label>span#unchecked {
+    display: block;
+
+}
+#chess1:checked+div>label>span#unchecked1,span#unchecked2 {
+    display: none;
+
+}
+#chess1:checked+div>label>span#checked1,span#checked2 {
+    display: block;
+}
+</style>
+<body>
+<input type="checkbox" id="chess1">
+<div>
+<label for="chess1"><div class="queenB"></div><span id="unchecked1"></span>
+<span id="checked1"><div class="kingB"></div></span><div class="elefantB"></div><span id="unchecked2"></span>
+<div class="horseB"></div></span></label></div>   
+</body>
+</html>
