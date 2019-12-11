@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body {
+        margin: 20px;
+    }
+    .square {
+  position: absolute;
+}
+@media screen and (max-width: 400px) {
+  .square {
+    border-left: solid transparent 150px;
+    border-right: solid transparent 150px;
+    border-top: solid red 150px;
+    transition: all 2s;
+  }
+}
+@media screen and (min-width: 401px) {
+  .square {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border: solid 1px blue;
+    transition: all 2s;
+  }
+}
+@media screen and (min-width: 800px) {
+  .square {
+    border-radius: 50%;
+    transition: all 2s;
+    background-color: green;
+    border: solid 10px fuchsia; 
+
+  }
+}
+
+    </style>
+</head>
+
+<body>
+<div class="square"></div>
+</body>
+</html>

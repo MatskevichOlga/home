@@ -14,14 +14,14 @@
    #test>P { border: solid 1px red; }
    .test { color: #000; } 
    P.test { font-style: italic; }
-   P.hello>P.test { font-weight: bold; }  /* нет вложенного P.test в контейнер с .hello
+   .hello>P.test { font-weight: bold; }  /* нет вложенного P.test в контейнер с .hello
    есть только <p class="hello test eee"> */
    div.hello>P.test { font-weight: normal; } /* нет div с классом hello */
    .test.hello { color: red; }
    P.test.hello { text-transform: uppercase; }
    h2.test.hello.eee { color: red; }
    P>a[href] { border: solid 1px blue; }
-   #test+P+P { background-color: yellow; } /* Нет третьего параграфа */
+   #test+P+P+P { background-color: yellow; } /* Нет третьего параграфа */
    #test~* { font-size: 23px; }
 
   </style>
