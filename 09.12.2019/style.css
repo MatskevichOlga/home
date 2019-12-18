@@ -83,9 +83,15 @@ aside>div~ul>li>ul {
 }
 #roga:checked~ul {
     display: block;
+   
 }
 #roga:checked~label[for=roga] {
     display: block;
+    transform: rotate(90deg);
+ 
+}
+#roga~label[for=roga] {
+    transition: 2s;
 }
 #kopita:checked~ul {
     display: block;

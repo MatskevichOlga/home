@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Secundomer</title>
+    <style>
+    body {
+        margin: 0;
+        background-color: rgb(217, 232, 236);
+      }
+      .stopwatch {
+        background: rgb(230, 102, 241);
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        left: calc(50% - 200px);
+        top: calc(50% - 200px);
+      }
+      .numbers {
+        height: 270px;
+        width: 270px;
+        position: absolute;
+        left: 10px;
+        top: 20px;
+      }
+      ul li {
+        position: absolute;
+        text-align: center;
+        font-size: 26px;
+        font-family: verdana;
+        color: rgb(55, 12, 247);
+        font-weight: bold;
+      }
+      ul li:nth-child(1) {
+        left: calc(50% - 10px);
+        top: 0;
+        list-style: none;
+      }
+      ul li:nth-child(2) {
+        left: calc(50% + 100px);
+        top: 10px;
+      }
+      ul li:nth-child(3) {
+        left: calc(50% + 140px);
+        top: 65px;
+      }
+      ul li:nth-child(4) {
+        right: 0;
+        top: calc(50% - 15px);
+        list-style: none;
+      }
+      ul li:nth-child(5) {
+        left: calc(50% + 143px);
+        top: 170px;
+      }
+      ul li:nth-child(6) {
+        left: calc(50% + 100px);
+        top: 220px;
+      }
+      ul li:nth-child(7) {
+        bottom: 0;
+        left: calc(50% - 5px);
+        list-style: none;
+      }
+      ul li:nth-child(8) {
+        left: calc(50% - 55px);
+        top: 220px;
+      }
+      ul li:nth-child(9) {
+        left: calc(50% - 90px);
+        top: 170px;
+      }
+      ul li:nth-child(10) {
+        left: 5px;
+        top: calc(50% - 20px);
+        list-style: none;
+      }
+      ul li:nth-child(11) {
+        left: calc(50% - 95px);
+        top: 60px;
+      }
+      ul li:nth-child(12) {
+        left: calc(50% - 45px);
+        top: 5px;
+      }
+      .stopwatch-hand {
+        height: 90px;
+        width: 2px;
+        background: rgb(15, 228, 61);
+        border-radius: 2px;
+        position: absolute;
+        top: calc(50% - 90px);
+        left: calc(50% - 2px);
+        transform-origin: 2px 90px;
+        animation: secund 60s linear infinite;
+      }
+      .stopwatch-hand:before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgb(109, 35, 245);
+        top: calc(100% - 4px);
+        left: calc(100% - 5px); 
+      }
+      @keyframes secund {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+      }
+      </style>
+</head>
+<body>
+    <div class="stopwatch">
+      <div class="stopwatch-hand"></div>
+      <div class="numbers">
+        <ul>
+            <li>12</li>
+            <li></li>
+            <li></li>
+            <li>3</li>
+            <li></li>
+            <li></li>
+            <li>6</li>
+            <li></li>
+            <li></li>
+            <li>9</li>
+            <li></li>
+            <li></li>
+            </ul></div>
+      </div>
+</body>
+</html>

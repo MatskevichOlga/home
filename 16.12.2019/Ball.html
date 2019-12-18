@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ball</title>
+    <style>
+    body { margin: 0; }
+    @keyframes bouncing {
+    0% { top: 0; left: 0; animation-timing-function: ease-in;}
+    20% { left: 20%; top: 30vw; animation-timing-function: ease-out;}
+    40% { top: 0; left: 40%; animation-timing-function: ease-in;}
+    60% { left: 60%; top: 30vw; animation-timing-function: ease-out;}
+    80% { left: 80%; top: 0; animation-timing-function: ease-in;}
+    100% { left: calc(100% - 100px); top: 30vw; animation-timing-function: ease-out;}
+    }
+    P { 
+    position: relative;
+    display:block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 0;
+    background-color: rgb(22, 240, 185);
+    animation: bouncing 4s 0s infinite alternate both;
+    }
+    </style>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
