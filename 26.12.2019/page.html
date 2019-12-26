@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Сверстать макет </title>
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 639px)">
+    <link rel="stylesheet" href="css/tab.css" media="screen and (min-width: 640px) and (max-width: 1024px)">
+    <!--
+    Сверстать с помощью flexbox:
+    <640 - блоки в столбик, блоки 2, 10, 11, 12 - прячем, реклама(бл.7 закрывается), меню выпадающее и fixed
+    640...1024 - как на макете
+    1024...1200 - блоки 4 и 7 становятся горизонтально
+    > 1200 - максимальная ширина 1200px и центрирование по горизонтали
+    -->
+  
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div>LOGO</div>
+			<div>2</div>
+			<div>Наши контакты:(+37533)656-45-79</div>
+		</header>
+		<hr>
+		<main>
+			<aside>
+				<div class="four">4</div>
+				<div class="five">5</div>
+			</aside>
+			<article>
+				<div class="six">6</div>
+                <input type="checkbox" id="Catalog" name="a1">
+        <label for="Catalog">Каталог</label>
+				<ul class="Cat">
+					<li>Изготовление сайтов</li>
+					<li>Как мы работаем</li>
+					<li>Интеграция с 1С</li>
+					<li>Поддержка сайтов</li>
+					<li>Дизайн сайтов</li>
+					<li>Интернет магазины</li>
+					<li>Создание логотипов</li>
+				</ul>
+				<div>Реклама</div>
+				<div> Студия "Пиксель Плюс" разработает полнофункциональный продукт,
+                ориентированный на целевую аудиторию и решающий поставленные перед ним
+                маркетинговые задачи.</div>
+			</article>
+			<hr>
+         </main>
+		
+		<footer>
+			<div>&copy;2019</div>
+			<div>10</div>
+			<div>11</div>
+			<div>12</div>
+		</footer>
+	</div>
+</body>
+
+</html>

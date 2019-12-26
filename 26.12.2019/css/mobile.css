@@ -1,0 +1,100 @@
+
+   header>div:first-child {      
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        height: 10vh;
+        align-items: center;
+        line-height: 10vh;
+    }
+     header>div:last-child {      
+        background-color: blue;
+        display: flex;
+        flex-direction: column;
+        height: 10vh;
+        align-items: center;
+        margin: 1vh 0 0 0;
+    }
+    article input {
+        display: none;
+    }
+    article ul li {
+        list-style: none;
+        display: none;
+    }
+    .Cat {
+        position: fixed;
+        margin-top: -7vh;
+    }
+    #Catalog:checked~label[for=Catalog] {
+        display: block;
+    }
+    #Catalog:checked~ul li {
+        display: block;
+        cursor: pointer;
+    }
+    label {
+        position: fixed;
+        margin-top: -10vh;
+    }
+
+    article>div:nth-child(1) {
+        display: flex;
+        background-color: lightblue;
+        flex-direction: column;
+        align-items: center;
+        height: 10vh;
+    }
+    article>ul+div {
+        margin: 1vh 0;
+        background-color: blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 10vh;
+    }
+    article>div:last-child {
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+    }
+    article {
+        order: -1;
+
+    }
+    aside {
+        order: 0;
+    }
+
+    aside>div:first-child {
+      background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        height: 10vh;
+        align-items: center;
+        margin: 0 0 1vh;
+        order: -1;
+    }
+     aside>div:last-child {
+      background-color: blue;
+        display: flex;
+        flex-direction: column;
+        height: 10vh;
+        align-items: center;
+        margin: 0 0 1vh;
+    }
+    footer>div:first-child {
+        background-color: blue;
+        display: flex;
+        flex-direction: column;
+        height: 10vh;
+        align-items: center;
+        line-height: 10vh;
+    }
+    
+    footer>div:last-child, footer>div:nth-child(2), footer>div:nth-child(3), 
+    header>div:nth-child(2) {
+        display: none;
+    }
