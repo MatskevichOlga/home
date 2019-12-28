@@ -1,111 +1,129 @@
-header, main, footer, aside, article, hr {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+body {
+    margin: 0;
 }
 header {
-    height: 10vh;
-    align-items: center;
-    justify-content: center;
+    display: flex;
 }
-header>div:first-child, header>div:nth-child(2),
-header>div:nth-child(3) {
-    background-color: lightblue;
-    height: 10vh;
-    line-height: 10vh;
-    text-align: center;
+aside {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
-header>div:first-child {
-    flex: 1;
-    margin: 0 1vh 0 0;
-}
-header>div:nth-child(2) {
-    flex: 2;
-    margin: 0 1vh 0 0;
-}
-header>div:nth-child(3) {
-    flex: 3;
-}
-article input {
+
+    div {
+      padding: 10px;
+    }
+    header>div, article>ul>li, aside>div, article>div, footer>div  {
+        background-color: lightblue;
+    }
+    label {
+        position: absolute;
+    }
+    aside input {
         display: none;
     }
-article ul li {
+    aside ul li {
         list-style: none;
         display: none;
     }
- #Catalog:checked~label[for=Catalog] {
-        display: flex;
-    }
- #Catalog:checked~ul li {
-        display: flex;
-        cursor: pointer;
-    }
-.Cat, label {
-        position: fixed; }
-.Cat {
-    margin-left: -5vw;
-}
- article>div:nth-child(1) {
-        display: flex;
-        background-color: blue;
-        align-items: center;
-        margin: 0 1vh 1vh 0;
-        flex-wrap: wrap;
-        width: 20vw;
-        height: 30vh;
-    }
-    article>ul+div {
-        margin: 10vh 1vh 0 0;
-        background-color: blue;
-        align-items: center;
-        height: 14vh;
-        flex-wrap: wrap;
-        flex-direction: column;
-        width: 20vw;
-    }
-    article>div:last-child {
-        background-color: blue;
-        align-items: center;
-        text-align: justify;
-        margin: 1vh;
-        flex-wrap: wrap;
-        width: 30vw;
-    }
-    aside>div:first-child {
-      background-color: rgb(230, 173, 222);
-        height: 14vh;
-        width: 10vw;
-        align-items: center;
-        margin: 1vh 0 0 0 ;
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-      
-    }
-     aside>div:last-child {
-      background-color: rgb(230, 173, 222);
-        height: 20vh;
-        align-items: center;
-        margin-left: 0vw;
-        flex-wrap: wrap;
-        width: 60vw;
-    }
-    .four {
-        order: 2;
-    }
-    .five {
-        order: -1;
-    }
-    .six {
-        order: -5;
-    }
-    main {
-        flex-direction: row-reverse;
-        justify-content: space-between;
+    #Menu:checked~label[for=Menu] {
+        display: block;
     
     }
-    article~hr {
-        display: none;
+    #Menu:checked~ul li {
+        display: block;
+        cursor: pointer;
     }
-    article, aside {
-        flex-direction: column;
-    }
+    header>div:first-child {
+     flex: 1;
+    margin: 0 1vh 0 0;
+}
+header>div:nth-child(2) {
+            flex: 2;
+    margin: 0 1vh 0 0; 
+}
+header>div:nth-child(3) {
+            flex: 3;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+}
+aside {
+    height: 700px;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0 0 20px 0;
+}
+
+aside>div:first-child {
+
+    height: 350px;
+    width: 20vw;
+}
+aside>div:last-child {
+    width: 20vw;
+    height: 120px;
+}
+.five {
+    height: 250px;
+}
+article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70vw;
+    justify-content: space-between;
+
+}
+article>:nth-child(1) {
+    width: calc(100% - 20px)
+}
+article>:nth-child(3),
+article>:nth-child(4) {
+    width: calc(50% - 30px);
+    height: 120px;
+}
+article>:nth-child(2) {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+}
+article>ul>li {
+    width: 12vw;
+    height: 100px;
+    background-color:blue;
+    margin: 0 2vw 0 0;
+}
+article>ul>li:first-child, article>ul>li:nth-child(6) {
+    margin-left: -40px;
+}
+article>ul>li:nth-child(6), article>ul>li:last-child {
+    margin-top: 2vw;
+}
+
+main>hr {
+    display: none;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer>div:first-child, footer>div:nth-child(2)  {
+    width: calc(30% - 20px);
+    height: 180px;
+}
+footer>div:nth-child(3), footer>div:last-child {
+    width: calc(30% - 20px);
+    height: 75px;
+}
+footer>div:last-child {
+    position: relative;
+    left: 70%;
+    bottom: 95px;
+}

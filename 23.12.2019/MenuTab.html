@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MenuTab</title>
+     <style>
+  table {
+        border-collapse: collapse;
+        width: 100%;
+        align: center;
+     }
+    ul {
+        list-style: none;
+    }
+    table tr:first-child {
+      background-color: coral;  
+    }
+    .header1 {
+    background-color: lightsalmon;
+	width: 200px;
+    padding-bottom: 50px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+    }
+    td.header2 {
+        text-align: right;
+        padding-right: 2vw;
+        padding-left: 10vw;
+    }
+    td.header2>ul>li>ul {
+        display: none;
+    }
+    td.header2>ul>li:hover:nth-child(3)>ul {
+	display: block;
+    }
+    td.footer~td, td.footer {
+        text-align: center;
+        width: 100%;
+        background-color: fuchsia;
+        padding: 10vw;
+    }
+     table tr:nth-child(3) {
+     
+    }
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td class="header1">Logo</td>
+        <td class="header2">
+        <ul>
+            <li>О компании</li>
+            <li>Доставка</li>
+            <li>Вакансии
+                <ul>
+                    <li>Заготовщик кожи</li>
+                    <li>Заготовщик рогов</li>
+                    <li>Заготовщик копыт</li>
+                </ul>
+            </li>
+        </ul>
+        </td>
+    </tr>
+    <tr>
+        <td class="aside">Каталог
+        <ul>
+            <li><input type="checkbox" name="" id="roga">
+                <label for="roga">Рога</label>
+                <ul>
+                    <li>Бараньи</li>
+                    <li>Оленьи</li>
+                </ul>
+            </li>
+            <li><input type="checkbox" name="" id="kopyta">
+                <label for="kopyta">Копыта</label>
+                <ul>
+                    <li>Бараньи</li>
+                    <li>Оленьи</li>
+                    <li>Свиные</li>
+                </ul>
+            </li>
+            <li><input type="checkbox" name="" id="kozha">
+                <label for="kozha">Кожа</label>
+                <ul>
+                    <li>Крокодила</li>
+                    <li>Чебурашки</li>
+                    <li>Старухи шапокляк</li>
+                </ul></li>
+        </ul> </td>
+    <td class="main"></td>
+    </tr>
+    <tr>
+    <td class="footer">&copy; 2019</td>
+    <td></td>
+    </tr>
+</table>
+</body>
+</html>

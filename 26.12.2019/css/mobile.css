@@ -1,5 +1,7 @@
-
-   header>div:first-child {      
+    body {
+         margin: 0;
+     }
+    header>div:first-child {      
         background-color: lightblue;
         display: flex;
         flex-direction: column;

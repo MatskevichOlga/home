@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Сверстать макет </title>
-    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 639px)">
- 
+    <link rel="stylesheet" href="css/mobile1.css" media="screen and (max-width: 639px)">
+    <link rel="stylesheet" href="css/tab.css" media="screen and (min-width: 640px) and (max-width: 1024px)">
     <!--
     Сверстать с помощью flexbox:
     <640 - блоки в столбик, блоки 2, 10, 11, 12 - прячем, реклама(бл.7 закрывается), меню выпадающее и fixed
@@ -29,24 +29,30 @@
 		<hr>
 		<main>
 			<aside>
-				<div class="four">4</div>
-				<div class="five">5</div>
+				<div class="four">4
+                <input type="checkbox" id="Menu" name="a2">
+        <label for="Menu">Меню</label>
+        <ul class="men">
+        <li>Изготовление сайтов</li>
+		<li>Как мы работаем</li>
+		<li>Интеграция с 1С</li>
+		<li>Поддержка сайтов</li>
+        </div>
+				<div class="seven">Реклама</div>
 			</aside>
 			<article>
-				<div class="six">6</div>
-                <input type="checkbox" id="Catalog" name="a1">
-        <label for="Catalog">Каталог</label>
-				<ul class="Cat">
-					<li>Изготовление сайтов</li>
-					<li>Как мы работаем</li>
-					<li>Интеграция с 1С</li>
-					<li>Поддержка сайтов</li>
-					<li>Дизайн сайтов</li>
-					<li>Интернет магазины</li>
-					<li>Создание логотипов</li>
+				<div class="five">5</div>
+				<ul>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
+					<li>6</li>
 				</ul>
-				<div class="seven">Реклама</div>
-				<div class="eight"> Студия "Пиксель Плюс" разработает полнофункциональный продукт,
+				<div class="eight">8</div>
+				<div class="nine"> Студия "Пиксель Плюс" разработает полнофункциональный продукт,
                 ориентированный на целевую аудиторию и решающий поставленные перед ним
                 маркетинговые задачи.</div>
 			</article>
@@ -55,9 +61,9 @@
 		
 		<footer>
 			<div>&copy;2019</div>
-			<div>10</div>
 			<div>11</div>
 			<div>12</div>
+			<div>13</div>
 		</footer>
 	</div>
 </body>
