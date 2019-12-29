@@ -92,13 +92,16 @@ article>:nth-child(2) {
 article>ul>li {
     width: 12vw;
     height: 100px;
-    background-color:blue;
+    background-color:lightblue;
     margin: 0 2vw 0 0;
 }
 article>ul>li:first-child, article>ul>li:nth-child(6) {
     margin-left: -40px;
 }
-
+article>ul>li:last-child {
+    position: relative;
+    left: calc(-60% - 20px);
+}
 article>ul>li:nth-child(5) {
     margin-right: 0;
 }
