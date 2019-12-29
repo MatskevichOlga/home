@@ -1,16 +1,15 @@
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
 body {
     margin: 0;
+    
+}
+.wrapper {
+   max-width: 1200px;
+   justify-content: center;
 }
 header {
     display: flex;
 }
-aside {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
 div {
      padding: 10px;
 }
@@ -50,19 +49,22 @@ main {
     justify-content: space-between;
 }
 aside {
+    display: flex;
     height: 700px;
     justify-content: space-between;
-    flex-direction: column;
+    flex-direction: row;
     margin: 0 0 20px 0;
 }
 
 aside>div:first-child {
     height: 350px;
-    width: 20vw;
+    width: 150px;
+    margin-right: 20px;
 }
 aside>div:last-child {
-    width: 20vw;
+    width: 150px;
     height: 120px;
+    margin-right: 20px;
 }
 article {
     display: flex;
@@ -104,7 +106,7 @@ article>ul>li:nth-child(5) {
 }
 
 main>hr {
-    display: none;
+  display: none;
 }
 footer {
     display: flex;
