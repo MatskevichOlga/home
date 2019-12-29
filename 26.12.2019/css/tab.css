@@ -90,7 +90,7 @@ article>:nth-child(2) {
     width: calc(100% - 20px);
 }
 article>ul>li {
-    width: calc(20% - 20px);
+    width: 12vw;
     height: 100px;
     background-color:blue;
     margin: 0 2vw 0 0;
