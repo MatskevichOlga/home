@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Сверстать макет </title>
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 639px)">
+    <link rel="stylesheet" href="css/tab.css" media="screen and (min-width: 640px) and (max-width: 1024px)">
+    <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width: 1025px) and (max-width: 1200px)">
+    <link rel="stylesheet" href="css/desktopbig.css" media="screen and (min-width: 1201px)">
+    <!--
+    Сверстать с помощью flexbox:
+    <640 - блоки в столбик, блоки 2, 10, 11, 12 - прячем, реклама(бл.7 закрывается), меню выпадающее и fixed
+    640...1024 - как на макете
+    1024...1200 - блоки 4 и 7 становятся горизонтально
+    > 1200 - максимальная ширина 1200px и центрирование по горизонтали
+    -->
+  
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__logo">LOGO</div>
+			<div class="header__box">2</div>
+			<div class="header__contact">Наши контакты:(+37533)656-45-79</div>
+		</header>
+		<hr>
+		<main class="main">
+			<aside class="aside">
+				<div class="aside__menu">4
+                <input type="checkbox" class="aside__input" id="M" name="a">
+        <label class="aside__label" for="M">Меню</label>
+        <ul class="men">
+        <li class="men__item">Изготовление сайтов</li>
+		<li class="men__item">Как мы работаем</li>
+		<li class="men__item">Интеграция с 1С</li>
+		<li class="men__item">Поддержка сайтов</li>
+        </div>
+				<div class="aside__reklama">Реклама</div>
+			</aside>
+			<article class="article">
+				<div class="article__content">5</div>
+				<ul class="six">
+					<li class="six__item">6</li>
+					<li class="six__item">6</li>
+					<li class="six__item">6</li>
+					<li class="six__item">6</li>
+					<li class="six__item">6</li>
+					<li class="six__item">6</li>
+					<li class="six__item">6</li>
+				</ul>
+				<div class="article__eight">8</div>
+				<div class="article__nine"> Студия "Пиксель Плюс" разработает полнофункциональный продукт,
+                ориентированный на целевую аудиторию и решающий поставленные перед ним
+                маркетинговые задачи.</div>
+			</article>
+			<hr>
+         </main>
+		
+		<footer class="footer">
+			<div class="footer__ten">&copy;2019</div>
+			<div class="footer__eleven">11</div>
+			<div class="footer__twelve">12</div>
+			<div class="footer__last">13</div>
+		</footer>
+	</div>
+</body>
+
+</html>

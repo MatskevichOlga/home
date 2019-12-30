@@ -1,0 +1,37 @@
+body {
+         margin: 0;
+     }
+footer>div:not(:last-child), .header__box {
+        display: none;
+    }
+    header, main, footer {
+        outline: 1px solid red;
+    }
+    div {
+        outline: 1px solid blue; padding: 10px;
+    }
+    header>div,  article>ul>li, aside>div, article>div, footer>div  {
+        background-color: lightblue;
+    }
+    .aside__menu {
+        position: fixed;
+        background-color:lightpink;
+    }
+    .aside__input {
+        display: none;
+    }
+    .men__item {
+        list-style: none;
+        display: none;
+    }
+    .aside__input:checked~.aside__label {
+        display: block;
+    
+    }
+    .aside__input:checked~.men .men__item {
+        display: block;
+        cursor: pointer;
+    }
+    .aside__label {
+        position: fixed;
+    }
