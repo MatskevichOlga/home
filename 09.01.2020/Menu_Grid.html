@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Сверстать макет </title>
+    <style>
+
+    @media screen and (max-width: 1024px) {
+        header>div:nth-of-type(2) {
+            display: none;
+        }
+        }
+    @media screen and (max-width: 640px) {
+     hr {
+        display: none;
+    }
+    header, main>aside, main, main>section, main>section>ul, footer,  main>section>article
+    main>section>div {
+        display: grid; }
+
+    header {
+        grid-template-columns: 1fr;
+        grid-row-gap: 16px;
+        grid-template-rows: 85px 85px;
+    }
+    main {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+    main>section {
+        grid-template-rows: 200px 1fr 85px 85px;
+    }
+    main>section>div {
+        margin-bottom: 16px;
+    }
+  
+    main>section>article {
+        background: #888 !important;
+    }
+    main>section>ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 16px auto;
+     }
+    main>section>ul>li {
+        display: subgrid;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: calc(45vw - 18px);
+        height: calc(45vw - 18px);
+        line-height:100px;
+        text-align:left;
+        text-indent:8%;
+    }
+    
+   /* main {
+        padding-bottom: 316px;
+                /* 300 + 16*/
+    
+     main>aside{    
+        grid-template-rows: 300px;
+    }
+    main>aside>ul {
+        background: #ddd!important;
+    }
+    main>aside>div {
+        display:none;
+    }
+    footer>div:nth-of-type(1),
+    footer>div:nth-of-type(2) {
+        display: none;
+    }
+    footer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px;
+        grid-column-gap: 4px;
+    }
+    footer>div:nth-of-type(3),
+    footer>div:nth-of-type(4) {
+        background: #ddd !important;
+    }
+        }
+
+
+    @media screen and (min-width: 641px) and (max-width: 1024px) {
+    main, main>aside, footer, main>section{
+        display: grid;
+    }
+
+    header {
+        grid-template-columns: 0.3fr 0.7fr;
+        grid-template-rows: 85px;
+        grid-column-gap: 16px;
+        display: grid;
+    }
+    
+    hr:first-of-type {
+        display: none;
+    }
+    main {
+        display: grid;
+        
+    }
+    main>aside{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 80px;
+    }
+
+    main>aside>div {
+    display: grid;
+    background:#ddd !important;
+    grid-row: ;
+    }
+    main>section>div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px;
+    grid-row-gap: 16px;
+    background:#888 !important;
+    }
+    main>section>div+div {
+        margin-top: 16px;
+    }
+    main>section>ul {
+    display: grid;
+    grid-template-columns: 0.3fr 0.3fr 0.3fr;
+    grid-template-rows: 120px 120px 120px;
+    justify-content: space-between;
+    grid-row-gap: 16px;
+    
+    }
+          
+footer{
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 80px;
+    grid-row-gap: 16px; 
+}
+footer>div:nth-of-type(n+3) {
+    display: none;
+}
+ main>section>article {
+    display:none;
+    }
+}
+
+
+@media screen and (min-width: 1025px) {
+header, main, footer {
+                font-size:0;
+                margin: auto;
+ }
+header {
+    display: grid;
+    grid-template-columns: 0.1207fr 0.2795fr 0.5995fr;
+    grid-template-rows: 85px;
+    font-size: initial;
+    vertical-align: top;
+    grid-column-gap: 16px; 
+
+}
+main {
+    display: grid;
+    grid-template-columns: 145px 307px 1fr;
+    grid-column-gap: 16px;
+}
+ main>aside {
+    display: grid;
+    grid-template-rows: 270px 140px;
+    align-content: space-between;
+    vertical-align:top;
+    font-size: initial;
+    margin-top: -16px;
+ }
+main>section {
+    display: grid;
+    vertical-align;
+    font-size: initial;
+    grid-column: 2/5;     
+ }
+ main>section>article {
+    display: grid;
+    grid-template-rows: 165px;
+    grid-column: 1/5;
+}
+ main>section>ul {
+    display: grid;
+    line-height: 40px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 120px 120px;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    justify-content: space-between;
+    grid-column: 1/5;
+}
+
+main>section>div:nth-last-of-type(2) {
+    display: grid;
+    grid-template-columns: 304px;
+    grid-template-rows: 170px;
+    grid-column-gap: 16px;
+} 
+main>section>div:nth-last-of-type(1) {
+    display: grid;
+    grid-template-columns: 304px;
+    grid-template-rows: 170px;
+    grid-column-gap: 16px;
+    position: relative;
+    left: 16px;
+    bottom: 0;
+} 
+
+footer {
+    display: grid;
+    font-size: initial;
+    grid-template-columns: 0.3fr 0.3fr 0.3fr;
+    grid-template-rows: 65px 65px;
+    grid-row-gap: 14px;
+    justify-content: space-between;
+}
+           
+footer>div:nth-last-of-type(1){
+    position: relative;
+    bottom: 0px;
+    right: 0;
+    
+ }
+footer>div:nth-last-of-type(4) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;  
+}
+footer>div:nth-last-of-type(3) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;           
+        }
+}
+@media screen and (min-width: 1200px) {
+            /*
+вместо того, чтобы все копи-пастить 
+проценты дают нам возможность прописать просто максимальную ширину
+*/
+header, main,footer,hr {
+    max-width: 789px;
+    }
+}
+    main {
+      
+            
+        }
+        main>aside>ul,
+        header>div,
+        main>aside>ul,
+        main>aside>div,
+        footer>div {
+            background: #888;
+        }
+        main>section>article,
+        main>section>div:nth-of-type(1),
+        main>section>div:nth-of-type(2),
+        main>section>ul>li {
+            background: #ddd;
+        }
+        main>aside>ul,
+        main>section>ul {
+            padding: 0;
+        }
+        main>aside>ul>li,
+        main>section>ul>li {
+            list-style-type: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </header>
+    <hr>
+    <main>
+        <aside>
+            <ul>4</ul>
+            <div>7</div>
+        </aside>
+        <section>
+            <article>5</article>
+            <ul>
+                <li>6</li>
+                <li>6</li>
+                <li>6</li>
+                <li>6</li>
+                <li>6</li>
+                <li>6</li>
+                <li>6</li>
+            </ul>
+            <div>8</div>
+            <div>9</div>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+    </footer>
