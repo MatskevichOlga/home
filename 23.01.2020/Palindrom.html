@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palindrom</title>
+</head>
+<body>
+<script>
+function pal(str) {
+    str=prompt("Введите палиндром");
+    str=str.toLowerCase();
+    str=str.replace(/\s+/g, '');
+    if (str.length>=2||str.lenght%2===0) {
+        for (var i=0; i<str.length/2; i++) {
+           if (str.charAt(i)===str.charAt(str.length-i-1))
+       { alert("Это палиндром!!!");
+       break;
+        }
+           else { alert("Нет, это не палиндром!!!");
+        break;
+        }
+    }
+ }
+    else { alert("Это точно не палиндром!!!");
+    }
+}
+   pal();
+</script>
+    
+</body>
+</html>
+
