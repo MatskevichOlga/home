@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>валидация</title>
+    <style>
+      input[type='text'], input[type='number']  {
+        position: absolute;
+        left: 250px;
+      }
+      input[type='textarea'] {
+        width: 400px;
+        height: 50px;
+      }
+      form {
+        line-height: 24px;
+      }
+      .invalid {
+        border-color: red;
+      }
+     
+      span {
+        color: red;
+        position: absolute;
+        left: 420px;
+      }
+    </style>
+  </head>
+  <body>
+    <form name='INFO' action='https://fe.it-academy.by/TestForm.php'>
+    <p>Для внесения вашего сайта в каталог заполните форму:</p>
+    Разработчики: <input type=text name='RAZR'>
+    <span id='razrerr'></span><br />
+    Название сайта: <input type=text name='SITENAME'>
+    <span id='nameerr'></span><br />
+    URL сайта: <input type=text name='URLSITE'>
+    <span id='urlerr'></span><br />
+    Дата запуска сайта: <input type=number name='DATE'>
+    <span id='dateerr'></span><br />
+    Посетителей в сутки: <input type=number name='POSITYTELY'>
+    <span id='positerr'></span><br />
+    E-MAIL для связи: <input type=text name='EMAIL'>
+    <span id='emailerr'></span><br />
+    Рубрика каталога:
+    <select name='CATALOG'>
+        <option></option>
+        <option value=1>бытовая техника</option>
+        <option value=2>домашний уют</option>
+        <option value=3>здоровье</option>
+    </select><span id='caterr'></span><br />
+    Размещение:
+        <input id='LANG11' type=radio name='LANG' value=11>бесплатное
+        <input type=radio name='LANG' value=22>платное
+        <input type=radio name='LANG' value=33>VIP
+        <span id='langerr'></span><br />
+     Разрешить отзывы: <input type=checkbox name='OTZ'>
+     <span id='otzerr'></span><br />
+     Описание сайта:<br><input type=textarea name='DESCRIP'>
+     <span id='descriperr'></span><br />
+    <input type='submit' value='Опубликовать'>
+</form>
+    <script>
+'use strict';
+var form=document.forms.INFO;
+var razr=form.elements.RAZR;
+var siteName=form.elements.SITENAME;
+var date=form.elements.DATE;
+var urlSite=form.elements.URLSITE;
+var positytely=form.elements.POSITYTELY;
+var email=form.elements.EMAIL;
+var catalog=form.elements.CATALOG;
+var lang=form.elements.LANG11;
+var otz=form.elements.OTZ;
+var descrip=form.elements.DESCRIP;
+
+razr.addEventListener('blur',()=>validRazr(false))
+function validRazr(autoFocus) {
+  var errCount=0;
+  if (!razr.value) {
+    document.getElementById('razrerr').innerHTML='Заполните поле';
+    //razr.classList.add('invalid');
+   errCount++;
+  }
+  else {
+   document.getElementById('razrerr').innerHTML="";
+ //razr.classList.remove('invalid');
+  }
+   if ( errCount && autoFocus )
+        razr.focus(); // фокусируем поле, если разрешено и есть ошибки 
+  return errCount;
+}
+
+siteName.addEventListener('blur',()=>validSitename(false))
+function validSitename(autoFocus) {
+  var errCount=0;
+  if (!siteName.value) {
+    document.getElementById('nameerr').innerHTML='Заполните поле';
+   errCount++;}
+  else {
+   document.getElementById('nameerr').innerHTML="";
+  }
+  if ( errCount && autoFocus )
+        siteName.focus();
+  return errCount;
+}
+
+
+urlSite.addEventListener('blur',()=>validUrlsite(false))
+function validUrlsite(autoFocus) {
+  var errCount=0;
+  if (!urlSite.value) {
+    document.getElementById('urlerr').innerHTML='Заполните поле';
+   errCount++;
+  }
+  else {
+   document.getElementById('urlerr').innerHTML="";
+  }
+   if ( errCount && autoFocus )
+        urlSite.focus();
+  return errCount;
+}
+
+
+date.addEventListener('blur',()=>validDate(false))
+function validDate(autoFocus) {
+  var errCount=0;
+  if (!date.value) {
+    document.getElementById('dateerr').innerHTML='Заполните поле';
+   errCount++;}
+  else {
+   document.getElementById('dateerr').innerHTML="";
+  }
+    if ( errCount && autoFocus )
+        date.focus();
+  return errCount;
+}
+
+positytely.addEventListener('blur',()=>validPos(false))
+function validPos(autoFocus) {
+  var errCount=0;
+  if (!positytely.value) {
+    document.getElementById('positerr').innerHTML='Заполните поле';
+   errCount++;}
+  else {
+   document.getElementById('positerr').innerHTML="";
+  }
+   if ( errCount && autoFocus )
+        positytely.focus();
+  return errCount;
+}
+
+
+email.addEventListener('blur',()=>validEmail(false))
+function validEmail(autoFocus) {
+  var errCount=0;
+  if (!email.value.includes('@')) {
+    document.getElementById('emailerr').innerHTML='Заполните поле';
+   errCount++;}
+  else {
+   document.getElementById('emailerr').innerHTML="";
+  }
+ if ( errCount && autoFocus )
+    email.focus();
+  return errCount;
+}
+
+
+descrip.addEventListener('blur',()=>validDescrip(false))
+function validDescrip(autoFocus) {
+  var errCount=0;
+  if (!descrip.value) {
+    document.getElementById('descriperr').innerHTML='Заполните поле';
+   errCount++;
+  }
+  else {
+   document.getElementById('descriperr').innerHTML="";
+  }
+   if ( errCount && autoFocus )
+    descrip.focus();
+  return errCount;
+}
+
+catalog.addEventListener('blur',()=>validCatalog(false))
+function validCatalog(autoFocus) {
+  var errCount=0;
+  if (!catalog.value) {
+    document.getElementById('caterr').innerHTML='Выберите рубрику';
+   errCount++;
+  }
+  else {
+   document.getElementById('caterr').innerHTML="";
+  }
+  if ( errCount && autoFocus )
+    catalog.focus();
+  return errCount;
+}
+
+otz.addEventListener('change',()=>validOtz(false))
+function validOtz(autoFocus) {
+  var errCount=0;
+  if (!otz.value) {
+    document.getElementById('otzerr').innerHTML='Вы не разрешили отзывы';
+   errCount++;
+  }
+  else {
+   document.getElementById('otzerr').innerHTML="";
+  }
+    if ( errCount && autoFocus )
+    otz.focus();
+  return errCount;
+}
+
+
+lang.addEventListener('change',()=>validLang(false)) 
+function validLang(autoFocus) {
+  var errCount=0;
+  if (!lang.value) {
+    document.getElementById('langerr').innerHTML='Вы не выбрали размещение';
+   errCount++;
+  }
+  else {
+   document.getElementById('langerr').innerHTML="";
+  }
+    if ( errCount && autoFocus )
+    otz.focus();
+  return errCount;
+}
+
+ 
+   /*  if ( langValue=="" ) { // если ничего не выбрано - radio показывает пустую строку
+                alert('Вы не выбрали язык!');
+                // langField.focus(); сфокусировать ВСЮ радиокнопку не получится
+                // но можно промотать страницу к первой из радиокнопок:
+                document.getElementById('LANG11').scrollIntoView();
+                EO.preventDefault(); // форма не будет отправлена на сервер
+                return;
+            }
+ 
+  /*var errCount=0;
+  switch(lang.value) {
+    case (lang.value==11):
+    document.getElementById('langerr').innerHTML="";
+    break;
+    case (lang.value==22):
+    document.getElementById('langerr').innerHTML="";
+    break;
+    case (lang.value==33):
+    document.getElementById('langerr').innerHTML="";
+    break;
+    case (lang.value=""):
+    document.getElementById('langerr').innerHTML='Выберите размещение';
+    errCount++;
+    case (errCount && autoFocus):
+    document.getElementById('LANG11').focus()
+
+  }
+}*/
+/*Предлагаю следующий план.
+
+1. Пусть возле каждого поля формы есть span с текстом ошибки, обычно пустой.
+
+2. Для валидации каждого поля - отдельная функция валидации, получающая признак - фокусировать ли поле при ошибке и возвращающая количество найденных ошибок. 
+Например, функция валидации для поля разработчиков:
+
+function validRazr(autoFocus) {
+    // autoFocus - авто-фокусировать ли поле, ЕСЛИ в нём будет найдена ошибка
+
+    var errCount=0;
+    var razrField=document.forms.имяформы.razr; // razr - это имя поля разработчиков
+    var razrValue=razrField.value;
+
+    if ( razrValue=="" ) {
+        razrErrSpan.innerHTML="разработчиков обязательно надо указать!"; // razrErrSpan - это span для ошибок возле поля разработчиков
+        errCount++; 
+    }
+    else
+        razrErrSpan.innerHTML=""; // если ошибок не найдено - надо стереть старую ошибку, вдруг была
+
+    if ( errCount && autoFocus )
+        razrField.focus(); // фокусируем поле, если разрешено и есть ошибки
+
+    return errCount; // функция возвращает количество найденных ошибок
+}
+
+3. По событию blur (для текстовых полей) или change (для чекбоксов, радиокнопок, выпадающих списков) каждого поля нужно вызывать такую функцию с аргументом false (чтобы пользователь мог уйти с неверно заполненного поля).
+Например, для поля разработчиков:
+
+document.forms.имяформы.razr.onblur=function() { validRazr(false); }
+
+Возвращаемый функцией результат можно игнорировать.
+
+4. По нажатию submit нужно вызвать все функции валидации полей:
+
+function validAll(EO) {
+    EO=EO||window.event;
+
+    try {
+        var totalErrCount=0;
+        totalErrCount+=validRazr( !totalErrCount ); // автофокус разрешаем только если ошибок пока нет ни одной, т.е. только для самого первого ошибочного поля
+        totalErrCount+=validSiteName( !totalErrCount );
+        totalErrCount+=validStartDate( !totalErrCount );
+        ...
+        if ( totalErrCount )
+            EO.preventDefault(); // если ошибки были - отменяем отправку формы на сервер
+    }
+    catch ( err ) {
+        EO.preventDefault(); // что-то пошло не так - отменяем отправку формы на сервер
+    }
+}
+
+document.forms.имяформы.addEventListener('submit',validAll,false);*/
+
+ function validAll(EO) {
+    EO=EO||window.event;
+    try {
+        var totalErrCount=0;
+        totalErrCount+=validRazr( !totalErrCount ); // автофокус разрешаем только если ошибок пока нет ни одной, т.е. только для самого первого ошибочного поля
+        totalErrCount+=validSiteName( !totalErrCount );
+        totalErrCount+=validUrlsite( !totalErrCount );
+        totalErrCount+=validDate( !totalErrCount );
+        totalErrCount+=validPos( !totalErrCount );
+        totalErrCount+=validEmail( !totalErrCount );
+        totalErrCount+=validDescrip( !totalErrCount );
+        totalErrCount+=validCatalog( !totalErrCount );
+        totalErrCount+=validOtz( !totalErrCount );
+        totalErrCount+=validLang( !totalErrCount );
+        if ( totalErrCount )
+            EO.preventDefault(); // если ошибки были - отменяем отправку формы на сервер
+    }
+  catch ( err ) {
+      EO.preventDefault(); // что-то пошло не так - отменяем отправку формы на сервер
+    }
+}
+document.forms.INFO.addEventListener('submit',validAll, false);
+
+
+    </script>
+  </body>
+</html>
