@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="clock">Сдесь будут часы</div>
+    <canvas width="300" height="300" id="clockCanvas"></canvas>
+
+
+    <script>
+'use strict';
+function displayCanvas(){
+var canvas=document.getElementById("clockCanvas");
+var ctx=canvas.getContext('2d');
+//расчет координат центра часов и радиуса
+var radiusClock=canvas.width/2-10;
+var xCenterClock=canvas.width/2;
+var yCenterClock=canvas.height/2;
+
+//очистка экрана при вызове каждую секунду, чтобы канвас не перерисовывался
+ctx.fillStyle='#ffffff';
+ctx.fillRect=(0,0,canvas.width,canvas.height);
+
+//рисуем контур часов
+ctx.strokeStyle='#000000';
+ctx.lineWidth=2;
+ctx.beginPath(); //начало рисования
+ctx.arc(xCenterClock, yCenterClock, radiusClock, 0, 2*Math.PI, true);//рисуем дугу))
+ctx.stroke(); //метод обводки
+ctx.closePath();
+ctx.moveTo(xCenterClock, yCenterClock); //перемещаемся обратно в центр
+
+}
+function setTime() {
+var time=new Date();//текущее время
+var clock=document.getElementById("clock");
+clock.innerHTML=time.toLocaleTimeString();
+displayCanvas();
+//digitalClock.innerHTML=time.toLocaleTimeString();
+//hoursDeg+=360/60/360;
+//hourArrow.style.transform='rotate('+hoursDeg+'deg)';
+//minutesDeg+=6/60;
+//minuteArrow.style.transform='rotate('+minutesDeg+'deg)';
+//secondDeg += 6; //в секунду стрелка будет двигаться на 6 градусов
+//secondArrow.style.transform = 'rotate(' + secondDeg + 'deg)';
+}
+window.onload=setTime();
+window.setInterval(setTime, 1000);
+
+
+
+    </script>
+</body>
+</html>
